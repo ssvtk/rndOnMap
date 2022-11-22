@@ -13,7 +13,20 @@ export class CustomMap {
     )
   }
   //func add marker on map
-  addMarker(lat:number, lng:number):void {
+  addMarker(item: hasLocation): void {
+    new google.maps.Marker({
+      position: {
+        lat: item.location.lat,
+        lng: item.location.lng,
+      },
+      map: this.googleMap,
+    })
+  }
+}
 
-  } 
+export interface hasLocation {
+  location: {
+    lat: number
+    lng: number
+  }
 }
