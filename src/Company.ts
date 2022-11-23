@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker"
-
-export class Company {
+import { Mappable } from "./CustomMap"
+export class Company implements Mappable {
   companyName: string
   catchPhrase: string
   location: {
@@ -17,7 +17,9 @@ export class Company {
     }
   }
   markerContent(): string {
-    return `<h1>${this.companyName}</h1>
-    <p>${faker.lorem.paragraph(5)}</p>`
+    return `<div>
+    <h1>${this.companyName}</h1>
+    <h3>${this.catchPhrase}</h3>
+    </div>`
   }
 }
