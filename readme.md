@@ -2,4 +2,4 @@
 - Generates random Company and User data from "faker-js" library
 - Shows marker and title of this data on Google Map (using googlemap API) 
 
-Performed for TS lrn and Classes pattern undr
+Created to touch google maps api, prac for TS  and Classes pattern undr
