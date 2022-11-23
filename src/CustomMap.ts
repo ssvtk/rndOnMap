@@ -22,12 +22,19 @@ export class CustomMap {
   }
   //func add marker on map
   addMarker(item: Mappable): void {
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: {
         lat: item.location.lat,
         lng: item.location.lng,
       },
       map: this.googleMap,
+    })
+
+    marker.addListener("click", () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: "Hello world!",
+      })
+      infoWindow.open(this.googleMap, marker)
     })
   }
 }
